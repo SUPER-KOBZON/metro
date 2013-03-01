@@ -52,7 +52,7 @@ while(working):
             if(beg < mid) and (end < mid1):
                 marsh=base[beg+28:mid+28]+base1[end+28:mid1+28]
             elif(beg > mid) and (end < mid1):
-                marsh=base[mid+28:beg+28]+base1[end+28:mid1+28]    
+                marsh=base1[end+28:mid1+28]+base[mid+28:beg+28]    
             elif(beg > mid) and (end > mid1):
                 marsh=base[mid+28:beg+28]+base1[mid1+28:end+28]
             else:
@@ -69,7 +69,7 @@ while(working):
             elif(beg > mid) and (end > mid1):
                 marsh=base1[mid+28:beg+28]+base[mid1+28:end+28]
             else:
-                marsh=base1[mid+28:beg+28]+base[mid1+28:end+28]
+                marsh=base1[beg+28:mid+28]+base[mid1+28:end+28]
             
             
         print(marsh)
@@ -79,7 +79,7 @@ while(working):
             s += int(v[i])
         print("примерное время в пути:  ",s, "мин.")
         p=input("ввести другие значения?(да/нет): \n")
-    except ValueError:   #обработка исключения, есл
+    except ValueError:   #обработка исключения, которое образуется пр вводе 4 неверных значениях
         
         p=input("Вы 4 раза ввели неверное значение, хотите ли вы продолжить работу программы?(да/нет):\n")
     if p not in ("yes", "Y", "да", "Да"):
